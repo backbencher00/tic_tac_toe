@@ -1,4 +1,4 @@
-package org.tacTacToe.models;
+package org.ticTacToe.models;
 
 import lombok.Builder;
 import lombok.Getter;

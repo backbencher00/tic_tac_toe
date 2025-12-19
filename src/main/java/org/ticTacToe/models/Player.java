@@ -1,9 +1,9 @@
-package org.tacTacToe.models;
+package org.ticTacToe.models;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import org.tacTacToe.enums.PlayerType;
+import org.ticTacToe.enums.PlayerType;
 @Getter
 @Setter
 @Builder

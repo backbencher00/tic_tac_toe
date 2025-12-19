@@ -1,7 +1,7 @@
-package org.tacTacToe.service;
+package org.ticTacToe.service;
 
-import org.tacTacToe.enums.GameDifficulty;
-import org.tacTacToe.models.*;
+import org.ticTacToe.enums.GameDifficulty;
+import org.ticTacToe.models.*;
 
 import java.util.*;
 

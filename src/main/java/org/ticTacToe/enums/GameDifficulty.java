@@ -1,4 +1,4 @@
-package org.tacTacToe.enums;
+package org.ticTacToe.enums;
 
 public enum GameDifficulty {
     EASY, MEDIUM, HARD

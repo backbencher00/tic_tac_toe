@@ -1,13 +1,13 @@
-package org.tacTacToe;
+package org.ticTacToe;
 
-import org.tacTacToe.enums.GameDifficulty;
-import org.tacTacToe.enums.PlayerType;
-import org.tacTacToe.models.*;
-import org.tacTacToe.service.GameService;
+import org.ticTacToe.enums.GameDifficulty;
+import org.ticTacToe.enums.PlayerType;
+import org.ticTacToe.models.*;
+import org.ticTacToe.service.GameService;
 
 import java.util.*;
 
-import static org.tacTacToe.service.GameService.playTicTacTo;
+import static org.ticTacToe.service.GameService.playTicTacTo;
 
 public class Main {
     public static void main(String[] args) {
