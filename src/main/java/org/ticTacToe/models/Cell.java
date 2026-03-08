@@ -10,6 +10,6 @@ import lombok.Setter;
 public class Cell {
     String id;
     String boardId;
-    CellPosition cellCordinate;
+    CellPosition cellCoordinate;
     PlayerMove move;
 }

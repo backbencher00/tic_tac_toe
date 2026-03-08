@@ -3,24 +3,21 @@ package org.ticTacToe;
 import org.ticTacToe.enums.GameDifficulty;
 import org.ticTacToe.enums.PlayerType;
 import org.ticTacToe.models.*;
-import org.ticTacToe.service.GameService;
+import org.ticTacToe.service.CheckWinnerService;
+import org.ticTacToe.service.GameBuilder;
+import org.ticTacToe.service.GamePlayService;
 
 import java.util.*;
 
-import static org.ticTacToe.service.GameService.playTicTacTo;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
-        //first select the game board;
-        // select the players
-        // if there is remaining positions it is filled by bots;
-        // if there are all the bots (edge case)
-        // minimum there should be 2 players with minimum 1 human
-        //select the difficultyLevel
-        GameService service = new GameService();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please select board size");
 
-        int boardSize = 3;
+        int boardSize = sc.nextInt();
+        System.out.println("Selected board size is: " + boardSize);
+
         GameDifficulty difficultyLevel = GameDifficulty.EASY;
         List<Player> players = new ArrayList<>();
         players.add(Player
@@ -36,14 +33,14 @@ public class Main {
                 .name("udit")
                 .type(PlayerType.HUMAN)
                 .build());
-        Game game = service.getBuildGame(boardSize, players, difficultyLevel);
-        Queue<PlayerMove> playerMoves = playTicTacTo(game);
+        GameBuilder gameBuilder = new GameBuilder(boardSize, players, difficultyLevel);
+        Game game = gameBuilder.getBuildGame();
+        CheckWinnerService winnerService = new CheckWinnerService(game);
+
+        GamePlayService gamePlayService = new GamePlayService(game, winnerService);
+        Queue<PlayerMove> playerMoves = gamePlayService.playTicTacTo();
         game.setPlayerMoves(playerMoves);
     }
-
-
-
-
 }
 
 
